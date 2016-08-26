@@ -1,6 +1,12 @@
 class Api::BenchesController < ApplicationController
   def index
-    @benches = Bench.all;
+    puts " ---------------Params HERE --------------------"
+    puts params
+    @benches = Bench.all
+
+    @benches = @benches.select{|bench| bench.in_bounds(params[:bounds])}
+
+
   end
 
   def create

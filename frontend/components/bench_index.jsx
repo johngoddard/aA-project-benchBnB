@@ -2,10 +2,6 @@ import React from 'react';
 import BenchIndexItem from './bench_index_item.jsx';
 
 class BenchIndex extends React.Component {
-  componentDidMount(){
-    console.log(this.props);
-    this.props.requestBenches();
-  }
 
   render(){
     let benches = this.props.benches ? this.props.benches : {};

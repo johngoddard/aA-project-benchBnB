@@ -12,4 +12,14 @@
 
 class Bench < ActiveRecord::Base
   validates :lat, :lng, presence: true
+
+  def in_bounds(bounds)
+    puts " ---------------BOUNDS HERE --------------------"
+    puts bounds
+    puts self
+    if(self.lat <= bounds['northEast']['lat'].to_f && self.lat >= bounds['southWest']['lat'].to_f && self.lng <= bounds['northEast']['lng'].to_f && self.lng >= bounds['southWest']['lng'].to_f)
+      return true
+    end
+    false
+  end
 end
