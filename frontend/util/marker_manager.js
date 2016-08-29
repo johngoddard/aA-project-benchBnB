@@ -32,7 +32,7 @@ class MarkerManager {
 
   _removeMarker(marker){
     marker.setMap(null);
-    this.markers.filter(mark => mark !== marker);
+    this.markers.filter(mark => mark.description !== marker.description);
     marker = null;
   }
 

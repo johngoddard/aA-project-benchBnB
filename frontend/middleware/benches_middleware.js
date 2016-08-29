@@ -8,7 +8,6 @@ const BenchesMiddleware = ({getState, dispatch}) => next => action => {
     case BenchConstants.REQUEST_BENCHES:
       const success = data => dispatch(receiveBenches(data));
       const filters = getState().filters;
-      console.log(filters);
       fetchBenches(filters, success);
       return next(action);
     case FilterConstants.UPDATE_BOUNDS:
