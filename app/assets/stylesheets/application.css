@@ -25,4 +25,18 @@
   margin: auto;
   display: flex;
   justify-content: center;
+  font-family: sans-serif;
+}
+
+.bench-form-div input, textarea {
+  display: block;
+  width: 300px;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+}
+
+.bench-form-div{
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
 }

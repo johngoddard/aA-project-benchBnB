@@ -1,5 +1,5 @@
 import React from 'react';
-import BenchIndexItem from './bench_index_item.jsx';
+import BenchIndexItem from '../benches/bench_index_item.jsx';
 
 class BenchIndex extends React.Component {
 

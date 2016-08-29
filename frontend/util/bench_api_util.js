@@ -7,3 +7,13 @@ export const fetchBenches = (filters, success, error) => {
     error: () => console.log('error')
   });
 };
+
+export const postBench = (bench, success, error) => {
+  $.ajax({
+   method: 'POST',
+   url: '/api/benches/',
+   data: {bench: bench},
+   success,
+   error
+ });
+};

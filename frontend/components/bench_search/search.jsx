@@ -1,6 +1,6 @@
 import React from 'react';
-import BenchMap from './bench_map.jsx';
-import BenchIndex from './bench_index.jsx';
+import BenchMap from '../bench_map/bench_map.jsx';
+import BenchIndex from '../benches/bench_index.jsx';
 
 
 const Search = ({ benches, requestBenches, updateBounds }) => (

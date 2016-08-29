@@ -11,7 +11,7 @@
 #
 
 class Bench < ActiveRecord::Base
-  validates :lat, :lng, presence: true
+  validates :lat, :lng, :num_seats, presence: true
 
   def in_bounds(bounds)
     puts " ---------------BOUNDS HERE --------------------"
