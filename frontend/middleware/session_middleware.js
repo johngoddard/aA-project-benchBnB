@@ -5,8 +5,7 @@ import * as UTIL from '../util/session_api_util.js';
 
 
 const SessionMiddleware = ({getState, dispatch}) => next => action => {
-  const success = user => {dispatch(ACTIONS.receiveCurrentUser(user));
-                            console.log(user);};
+  const success = user => dispatch(ACTIONS.receiveCurrentUser(user));
   const error = errors => dispatch(ACTIONS.receiveErrors(errors));
 
   switch (action.type) {
@@ -17,7 +16,7 @@ const SessionMiddleware = ({getState, dispatch}) => next => action => {
       UTIL.signup(action.user, success, error);
       return next(action);
     case SessionConstants.LOGOUT:
-      UTIL.logout(success);
+      UTIL.logout();
       return next(action);
     default:
       next(action);

@@ -8,11 +8,15 @@ import * as ACTIONS from './actions/session_actions.js';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  const store = window.store = configureStore();
+  let store;
 
-  window.login = user => {store.dispatch(ACTIONS.login(user));}
-  window.logout = () => {store.dispatch(ACTIONS.logout());}
-  window.signup = user => {store.dispatch(ACTIONS.signup(user));}
+  if (window.currentUser){
+    const preloadedState = {session: {currentUser: window.currentUser}};
+    store = configureStore(preloadedState);
+  } else {
+    store = configureStore();
+  }
+
 
   const root = document.getElementById('root');
   ReactDOM.render(<Root store={store}/>, root);

@@ -11,6 +11,7 @@ class Api::SessionsController < ApplicationController
   end
 
   def destroy
+    puts {current_user}
     unless current_user
       render json: ["No user is signed in"], status: 404
     else
